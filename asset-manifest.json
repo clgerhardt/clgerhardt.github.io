@@ -1,23 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.047fe768.chunk.css",
-    "main.js": "/static/js/main.e2deab94.chunk.js",
-    "main.js.map": "/static/js/main.e2deab94.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.02041bb7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.02041bb7.js.map",
-    "static/js/2.901c3ec3.chunk.js": "/static/js/2.901c3ec3.chunk.js",
-    "static/js/2.901c3ec3.chunk.js.map": "/static/js/2.901c3ec3.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.a64df00b6513d5a94ce65e94df272d10.js": "/precache-manifest.a64df00b6513d5a94ce65e94df272d10.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.047fe768.chunk.css.map": "/static/css/main.047fe768.chunk.css.map",
-    "static/js/2.901c3ec3.chunk.js.LICENSE.txt": "/static/js/2.901c3ec3.chunk.js.LICENSE.txt",
-    "static/media/Primary_White Logo.png": "/static/media/Primary_White Logo.2fdfbc21.png"
+    "main.css": "/home/static/css/main.fe927caf.css",
+    "main.js": "/home/static/js/main.7bb6091e.js",
+    "static/js/787.4b24f717.chunk.js": "/home/static/js/787.4b24f717.chunk.js",
+    "static/media/IMG_9591.JPG": "/home/static/media/IMG_9591.dfe9866117f6511155cc.JPG",
+    "static/media/tmobile.png": "/home/static/media/tmobile.4610b6fad15f4e34a30a.png",
+    "index.html": "/home/index.html",
+    "main.fe927caf.css.map": "/home/static/css/main.fe927caf.css.map",
+    "main.7bb6091e.js.map": "/home/static/js/main.7bb6091e.js.map",
+    "787.4b24f717.chunk.js.map": "/home/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.02041bb7.js",
-    "static/js/2.901c3ec3.chunk.js",
-    "static/css/main.047fe768.chunk.css",
-    "static/js/main.e2deab94.chunk.js"
+    "static/css/main.fe927caf.css",
+    "static/js/main.7bb6091e.js"
   ]
 }
