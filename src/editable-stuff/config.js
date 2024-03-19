@@ -5,28 +5,28 @@ const navBar = {
 
 // Main Body SECTION
 const mainBody = {
-  gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
+  gradientColors: "#46fa76, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
   firstName: "Christian",
   middleName: "",
   lastName: "Gerhardt",
-  message: " I enjoy technology - always trying to learn something new. ",
+  message: " I type stuff and hope it works.",
   icons: [
     {
       image: "fa-github",
       url: "https://github.com/clgerhardt",
     },
     {
-      image: "fa-instagram",
-      url: "https://www.instagram.com/christian_lieble/",
-    },
-    {
       image: "fa-linkedin",
       url: "https://www.linkedin.com/in/christiangerhardt/",
     },
-    {
-      image: "fa-twitter",
-      url: "https://twitter.com/gurgledirt",
-    },
+    // {
+    //   image: "fa-twitter",
+    //   url: "https://twitter.com/gurgledirt",
+    // },
+    // {
+    //   image: "fa-instagram",
+    //   url: "https://www.instagram.com/christian_lieble/",
+    // },
   ],
 };
 
@@ -46,11 +46,11 @@ const mainBody = {
 
 const about = {
   show: true,
-  heading: "About Me",
+  heading: "Thou das not know me?",
   imageLink: require("../editable-stuff/IMG_9591.JPG"),
   imageSize: 375,
   message:
-    "My name is Christian Gerhardt. ",
+    "My name is Christian Gerhardt. I am a software engineer with a passion for learning. I am a graduate from the Valdosta State University - Valdosta Georgia with a degree in Computer Science. Majority of my professional experience is in full-stack development with personal projects in varying fields. I am currently working as a software engineer at T-Mobile.",
   resume: "https://docs.google.com/document/d/1xPKbItByUj3E_8FxA09k4tSqwPGL4TFaZyMGXXCavkA/edit?usp=sharing",
 };
 
@@ -82,15 +82,15 @@ const leadership = {
   message:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
   images: [
-    { 
-      img: require("../editable-stuff/IMG_9591.JPG"), 
-      label: "First slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
+    {
+      img: require("../editable-stuff/IMG_9591.JPG"),
+      label: "First slide label",
+      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum."
     },
-    { 
-      img: require("../editable-stuff/IMG_9591.JPG"), 
-      label: "Second slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
+    {
+      img: require("../editable-stuff/IMG_9591.JPG"),
+      label: "Second slide label",
+      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum."
     },
   ],
   imageSize: {
@@ -101,7 +101,7 @@ const leadership = {
 
 // SKILLS SECTION
 const skills = {
-  show: true,
+  show: false,
   heading: "Skills",
   hardSkills: [
     { name: "Python", value: 70 },
@@ -144,7 +144,7 @@ const getInTouch = {
 };
 
 const experiences = {
-  show: false,
+  show: true,
   heading: "Experiences",
   data: [
     {
@@ -152,11 +152,11 @@ const experiences = {
       companylogo: require('../assets/img/tmobile.png'),
       date: 'Oct 2020 – Present',
     },
-    // {
-    //   role: 'Application Developer',
-    //   companylogo: require('../assets/img/hntb.svg'),
-    //   date: 'May 2018 – Oct 2020',
-    // },
+    {
+      role: 'Application Developer',
+      companylogo: require('../assets/img/hntb.png'),
+      date: 'May 2018 – Oct 2020',
+    },
   ]
 }
 

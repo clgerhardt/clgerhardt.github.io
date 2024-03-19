@@ -8,16 +8,13 @@ import {
   repos,
   about,
   skills,
+  experiences,
   computerGraphics,
 } from "../editable-stuff/config.js";
 import { NavLink as CustomNavLink } from "./home/migration";
-import Dropdown from "react-bootstrap/Dropdown";
-import NavLink from "react-bootstrap/NavLink";
-import NavItem from "react-bootstrap/NavItem";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
   const [isTop, setIsTop] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const navbarMenuRef = React.useRef();
@@ -63,9 +60,12 @@ const Navigation = React.forwardRef((props, ref) => {
               <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
             </CustomNavLink>
           } */}
-          {repos.show && (
-            <CustomNavLink href={process.env.PUBLIC_URL + "/#projects"}>
-              Projects
+          {about.show && (
+            <CustomNavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/#aboutme"}
+            >
+              About
             </CustomNavLink>
           )}
           <CustomNavLink
@@ -76,12 +76,19 @@ const Navigation = React.forwardRef((props, ref) => {
           >
             Resume
           </CustomNavLink>
-          {about.show && (
-            <CustomNavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
-              About
+          {experiences.show && (
+            <CustomNavLink href={process.env.PUBLIC_URL + "/#experiences"}>
+              Experiences
+            </CustomNavLink>
+          )}
+          {repos.show && (
+            <CustomNavLink href={process.env.PUBLIC_URL + "/#projects"}>
+              Projects
+            </CustomNavLink>
+          )}
+          {repos.show && (
+            <CustomNavLink href={process.env.PUBLIC_URL + "/#projects"}>
+              Projects
             </CustomNavLink>
           )}
           {skills.show && (
