@@ -46,7 +46,7 @@ const mainBody = {
 
 const about = {
   show: true,
-  heading: "Thou das not know me?",
+  heading: "About Me",
   imageLink: require("../editable-stuff/IMG_9591.JPG"),
   imageSize: 375,
   message:
