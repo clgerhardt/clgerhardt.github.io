@@ -62,17 +62,28 @@ const about = {
 const repos = {
   show: true,
   heading: "Recent Projects",
-  gitHubUsername: "clgerhardt", //i.e."johnDoe12Gh"
+  gitHubUsername: "clgerhardt",
   reposLength: 6,
   specificRepos: [
-    'better-twitch-sidebar',
-    'Senior-Seminar-Travelly-Ruby-Frontend',
-    'Senior-Seminar-Travelly-Ruby-Backend',
-    'manga-app-backend',
-    'Group_chat',
-    'ComputerGraphics',
-    'CG_Final_Project'
+    'better-twitch-sidebar-extension',
   ],
+  externalProjects: [
+    {
+      isExternal: true,
+      name: "Risk of Resources",
+      description: "A community driven resource for the game Risk of Rain 2. The site is built with AstroJS and Svelte.",
+      svn_url: "https://riskofresources.com",
+      languages_url: {
+        "TypeScript": 535346,
+        "AstroJS": 323342,
+        "Svelte": 287364,
+        "CSS": 1556,
+        "HTML": 1132,
+        "GoLang": 423441
+      },
+      stargazers_count: 0,
+    }
+  ]
 };
 
 // Leadership SECTION

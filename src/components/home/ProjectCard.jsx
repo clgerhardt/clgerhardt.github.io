@@ -12,24 +12,24 @@ const ProjectCard = ({ value }) => {
     stargazers_count,
     languages_url,
     pushed_at,
+    isExternal
   } = value;
   return (
     <Col md={6}>
       <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
         <Card.Body>
+          {/* {JSON.stringify(value)} */}
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
           {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
           <hr />
           {languages_url ? (
-            <Language languages_url={languages_url} repo_url={svn_url} />
+            <Language languages_url={languages_url} repo_url={svn_url} isExternal={isExternal} />
           ) : (
             <Skeleton count={3} />
           )}
-          {value ? (
+          {value && stargazers_count > 0 && (
             <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
-          ) : (
-            <Skeleton />
           )}
         </Card.Body>
       </Card>
@@ -53,17 +53,22 @@ const CardButtons = ({ svn_url }) => {
   );
 };
 
-const Language = ({ languages_url, repo_url }) => {
+const Language = ({ languages_url, repo_url, isExternal }) => {
   const [data, setData] = useState([]);
 
   const handleRequest = useCallback(async () => {
     try {
-      const response = await axios.get(languages_url);
+      let response;
+      if (isExternal) {
+        response = {data: languages_url};
+      } else {
+        response = await axios.get(languages_url);
+      }
       return setData(response.data);
     } catch (error) {
       console.error(error.message);
     }
-  }, [languages_url]);
+  }, [languages_url, isExternal]);
 
   useEffect(() => {
     handleRequest();

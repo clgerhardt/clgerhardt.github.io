@@ -14,12 +14,9 @@ const dummyProject = {
   pushed_at: null,
 };
 const API = "https://api.github.com";
-// const gitHubQuery = "/repos?sort=updated&direction=desc";
-// const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
-const Project = ({ heading, username, length, specfic }) => {
+const Project = ({ heading, username, length, specfic, external }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
-  // const specficReposAPI = `${API}/repos/${username}`;
   const dummyProjectsArr = new Array(length + specfic.length).fill(
     dummyProject
   );
@@ -39,18 +36,17 @@ const Project = ({ heading, username, length, specfic }) => {
           }
         })
       } else {
-        // slicing to the length
         repoList = [...response.data.slice(0, length)];
       }
 
-
-      // setting projectArray
-      // TODO: remove the duplication.
+      if(external.length > 0) {
+        repoList = [...repoList, ...external];
+      }
       setProjectsArray(repoList);
     } catch (error) {
       console.error(error.message);
     }
-  }, [allReposAPI, length, specfic]);
+  }, [allReposAPI, length, specfic, external]);
 
   useEffect(() => {
     fetchRepos();
