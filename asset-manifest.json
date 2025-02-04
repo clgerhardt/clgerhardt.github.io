@@ -1,17 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe927caf.css",
-    "main.js": "/static/js/main.90fe2abb.js",
-    "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
-    "static/media/IMG_9591.JPG": "/static/media/IMG_9591.dfe9866117f6511155cc.JPG",
-    "static/media/tmobile.png": "/static/media/tmobile.4610b6fad15f4e34a30a.png",
+    "main.css": "/static/css/main.15c027b5.css",
+    "main.js": "/static/js/main.ca0fd496.js",
+    "static/media/me_secondary.jpeg": "/static/media/me_secondary.8c6c632bfba9a2c6d345.jpeg",
     "index.html": "/index.html",
-    "main.fe927caf.css.map": "/static/css/main.fe927caf.css.map",
-    "main.90fe2abb.js.map": "/static/js/main.90fe2abb.js.map",
-    "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
+    "main.15c027b5.css.map": "/static/css/main.15c027b5.css.map",
+    "main.ca0fd496.js.map": "/static/js/main.ca0fd496.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe927caf.css",
-    "static/js/main.90fe2abb.js"
+    "static/css/main.15c027b5.css",
+    "static/js/main.ca0fd496.js"
   ]
 }
