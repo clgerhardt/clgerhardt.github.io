@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Christian Gerhardt: software engineer, game developer, and artist.",
+} = Astro.props;
+const pageTitle = title ? `${title} | Christian Gerhardt` : "Christian Gerhardt";
+const base = import.meta.env.BASE_URL;
+const image = new URL("social-image.png", Astro.site).href;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" sizes="32x32" href={`${base}favicon.ico`} />
+    <link rel="apple-touch-icon" href={`${base}logo192.png`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      try {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light") document.documentElement.classList.remove("dark");
+      } catch {}
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 pixel-box px-3 py-2"
+    >
+      Skip to content
+    </a>
+    <Header />
+    <main id="main" class="mx-auto w-full max-w-4xl flex-1 px-5 py-10 md:py-14">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import ArtGallery, { type ArtPiece } from "../components/ArtGallery";
+
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/art/*.{png,jpg,jpeg,webp,gif}",
+  { eager: true },
+);
+
+const pieces: ArtPiece[] = Object.entries(files)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, mod]) => ({
+    src: mod.default.src,
+    width: mod.default.width,
+    height: mod.default.height,
+    title: (path.split("/").pop() ?? "")
+      .replace(/\.[^.]+$/, "")
+      .replace(/^\d+[-_]?/, "")
+      .replace(/[-_]+/g, " "),
+  }));
+---
+
+<Base title="Art" description="Pixel art and drawings by Christian Gerhardt.">
+  <h1 class="text-2xl">Art</h1>
+  <p class="mt-3 text-muted-foreground">Sprites, sketches, and game assets.</p>
+  <div class="mt-8">
+    {
+      pieces.length > 0 ? (
+        <ArtGallery client:visible pieces={pieces} />
+      ) : (
+        <p class="pixel-box p-5">
+          Nothing here yet. Add images to <code>src/assets/art</code>.
+        </p>
+      )
+    }
+  </div>
+</Base>
