@@ -1,0 +1,24 @@
+---
+import Base from "../../layouts/Base.astro";
+import { experience } from "../../data/experience";
+---
+
+<Base title="Experience" description="Professional experience of Christian Gerhardt.">
+  <h1 class="text-2xl">Experience</h1>
+  <p class="mt-3 text-muted-foreground">Quest log, newest first. Select a company for details.</p>
+  <ul class="mt-8 space-y-6">
+    {
+      experience.map((job) => (
+        <li>
+          <a href={`/experience/${job.slug}`} class="pixel-box pixel-box-hover group flex flex-wrap items-baseline justify-between gap-2 p-5">
+            <div>
+              <h2 class="text-base group-hover:text-primary">{job.company}</h2>
+              <p class="mt-2 text-base text-muted-foreground">{job.roles[0].title}</p>
+            </div>
+            <p class="text-base">{job.period} <span aria-hidden="true">&#9654;</span></p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

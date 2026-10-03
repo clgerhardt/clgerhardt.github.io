@@ -1,0 +1,32 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+
+interface Props {
+  title: string;
+  blurb: string;
+  engine: string;
+  tags: string[];
+  links: { label: string; href: string }[];
+}
+
+const { title, blurb, engine, tags, links } = Astro.props;
+---
+
+<li class="pixel-box flex flex-col p-5">
+  <h2 class="text-sm leading-relaxed">{title}</h2>
+  <p class="mt-3 flex-1">{blurb}</p>
+  <p class="mt-3 text-base text-muted-foreground">Built with {engine}</p>
+  <ul class="mt-3 flex flex-wrap gap-2">
+    {tags.map((t) => <li><Badge variant="secondary">{t}</Badge></li>)}
+  </ul>
+  <div class="mt-5 flex gap-3">
+    {
+      links.map((l) => (
+        <a href={l.href} target="_blank" rel="noreferrer" class={buttonVariants({ size: "default" })}>
+          {l.label}
+        </a>
+      ))
+    }
+  </div>
+</li>

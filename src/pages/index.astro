@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import { Badge } from "@/components/ui/badge";
+import me from "../assets/img/me_main.jpeg";
+
+const menu = [
+  { href: "/games", label: "Games", hint: "Things I've built" },
+  { href: "/projects", label: "Projects", hint: "Sites and tools" },
+  { href: "/art", label: "Art", hint: "Things I've drawn" },
+  { href: "/experience", label: "Experience", hint: "Where I've worked" },
+];
+const favorites = [
+  "Fallout 3 & 4",
+  "Risk of Rain 2",
+  "Teamfight Tactics",
+  "Halo 3 / Reach",
+  "Dark Souls (1, 3, 2)",
+  "Borderlands",
+  "Destiny",
+];
+---
+
+<Base>
+  <section class="grid gap-8 md:grid-cols-[auto_1fr] md:items-center">
+    <div class="pixel-box w-48 shrink-0 overflow-hidden p-0 md:w-56">
+      <Image src={me} alt="Christian Gerhardt" width={448} class="aspect-square w-full object-cover" />
+    </div>
+    <div>
+      <p class="text-primary">PLAYER ONE</p>
+      <h1 class="mt-2 text-2xl md:text-3xl">Christian Gerhardt</h1>
+      <p class="mt-4 max-w-prose text-xl">
+        By day a software engineer at{" "}
+        <a href="https://www.t-mobile.com/" class="underline hover:text-primary" target="_blank" rel="noreferrer">T-Mobile</a>.
+        By night I remake old games, make new ones, and climb rocks. Eventually
+        I'd like to make games for a living.
+      </p>
+    </div>
+  </section>
+
+  <nav aria-label="Sections" class="mt-12">
+    <h2 class="mb-4 text-sm text-muted-foreground">MAIN MENU</h2>
+    <ul class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+      {
+        menu.map((m) => (
+          <li>
+            <a href={m.href} class="pixel-box pixel-box-hover group block p-4">
+              <span class="font-heading text-sm group-hover:text-primary">
+                <span class="invisible group-hover:visible">&#9654;</span> {m.label}
+              </span>
+              <span class="mt-2 block text-base text-muted-foreground">{m.hint}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <section class="mt-12 grid gap-6 md:grid-cols-2">
+    <div class="pixel-box p-5">
+      <h2 class="text-sm">FAVORITES</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {favorites.map((f) => <li><Badge variant="secondary">{f}</Badge></li>)}
+      </ul>
+    </div>
+    <div class="pixel-box p-5">
+      <h2 class="text-sm">SIDE QUESTS</h2>
+      <p class="mt-4">
+        Rock climbing for about 3 years: Stone Fort in Tennessee, Sand Rock in
+        Alabama, and gyms around Atlanta. Goals: a V6 and a 5.12 outside.
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-12 pixel-box p-5">
+    <h2 class="text-sm">SAVE FILE</h2>
+    <p class="mt-4">
+      B.S. in Computer Science with a minor in Anthropology from Valdosta State
+      University. Previously an application developer at{" "}
+      <a href="https://www.HNTB.com/" class="underline hover:text-primary" target="_blank" rel="noreferrer">HNTB</a>
+      building stakeholder engagement tools.
+    </p>
+  </section>
+</Base>

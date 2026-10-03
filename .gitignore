@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+/dist
+/.astro
 /public/CNAME
 
 # misc
