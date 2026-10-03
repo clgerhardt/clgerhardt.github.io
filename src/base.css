@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-b from-teal-900 to-emerald-800 text-white;
+}
+
+ul {
+  padding-left: 20px;
+}
